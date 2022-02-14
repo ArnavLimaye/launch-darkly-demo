@@ -1,11 +1,10 @@
 import './App.css';
 import Home from './Home';
 import Header from './Header';
-import { useFlags } from 'launchdarkly-react-client-sdk';
+import useFlags from './context/useFlags';
 
 const App = () => {
   const { SHOW_HOME_DIV } = useFlags();
-  console.log(useFlags());
   return (
     <>
       <Header />

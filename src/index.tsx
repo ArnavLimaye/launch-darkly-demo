@@ -3,15 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import FeatureTogglesContext from './context/featureToggles';
 
-(async () => {
-  const FeatureTogglesProvider = await FeatureTogglesContext();
+(() => {
   ReactDOM.render(
     <React.StrictMode>
-      <FeatureTogglesProvider>
-        <App />
-      </FeatureTogglesProvider>
+      <App />
     </React.StrictMode>,
     document.getElementById('root'),
   );
