@@ -3,7 +3,7 @@ import getUserData from '../authentication';
 
 export default async function FeatureTogglesContext() {
   console.log('env', process.env.REACT_APP_LAUNCHDARKLY_CLIENT_ID);
-  const { id, name, email } = getUserData();
+  const { id, name, email, country } = getUserData();
   return asyncWithLDProvider({
     clientSideID: process.env.REACT_APP_LAUNCHDARKLY_CLIENT_ID || '',
     options: {
@@ -16,6 +16,7 @@ export default async function FeatureTogglesContext() {
     user: {
       name,
       email,
+      country,
       key: id,
     },
   });
